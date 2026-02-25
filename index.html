@@ -1,0 +1,488 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Chen Peng</title>
+  <meta
+    name="description"
+    content="Chen Peng - UPenn student in Physics and Bioengineering focused on neuroscience, machine learning, and investing."
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Sora:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    :root {
+      --bg: #f7f1e8;
+      --surface: #fffaf3;
+      --ink: #141311;
+      --muted: #58514a;
+      --accent: #b4472a;
+      --line: rgba(20, 19, 17, 0.17);
+      --max: 980px;
+      --radius: 18px;
+      --shadow: 0 16px 45px rgba(20, 19, 17, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Sora", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(1300px 600px at -12% -15%, #f0deca 0%, transparent 62%),
+        radial-gradient(1100px 520px at 110% 0%, #f8e8d3 0%, transparent 67%),
+        linear-gradient(180deg, #f9f4ec 0%, var(--bg) 32%, var(--bg) 100%);
+      line-height: 1.55;
+      letter-spacing: 0.01em;
+      min-height: 100vh;
+      animation: fade-in 750ms ease;
+    }
+
+    a {
+      color: inherit;
+      text-decoration-color: color-mix(in srgb, var(--accent), #ffffff 20%);
+      text-underline-offset: 0.2em;
+      text-decoration-thickness: 1px;
+    }
+
+    .wrap {
+      width: min(var(--max), 92vw);
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(8px);
+      background: color-mix(in srgb, var(--bg), #ffffff 40%);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .topbar .wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.85rem 0;
+    }
+
+    .brand {
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      color: color-mix(in srgb, var(--ink), #ffffff 14%);
+    }
+
+    nav {
+      display: flex;
+      gap: 0.95rem;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    nav a {
+      text-decoration: none;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--muted);
+      transition: color 180ms ease;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    .hero {
+      padding: 5rem 0 2.4rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    h1 {
+      font-family: "Instrument Serif", serif;
+      font-size: clamp(3rem, 8vw, 5.8rem);
+      line-height: 0.92;
+      margin: 0;
+      font-weight: 400;
+      letter-spacing: 0.01em;
+    }
+
+    .subtitle {
+      margin-top: 1.3rem;
+      max-width: 42rem;
+      color: var(--muted);
+      font-size: clamp(1.02rem, 2.2vw, 1.24rem);
+    }
+
+    .contact-row {
+      margin-top: 1.7rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+    }
+
+    .chip {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: color-mix(in srgb, var(--surface), #ffffff 30%);
+      padding: 0.48rem 0.85rem;
+      font-size: 0.83rem;
+      color: color-mix(in srgb, var(--ink), #ffffff 22%);
+      text-decoration: none;
+      transition: transform 160ms ease, border-color 160ms ease;
+    }
+
+    .chip:hover {
+      transform: translateY(-2px);
+      border-color: color-mix(in srgb, var(--accent), #ffffff 32%);
+    }
+
+    main {
+      padding: 0 0 4rem;
+    }
+
+    main > section {
+      margin-top: 2.5rem;
+      padding: 1.45rem;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: color-mix(in srgb, var(--surface), #ffffff 20%);
+      box-shadow: var(--shadow);
+      animation: slide-up 700ms ease both;
+    }
+
+    main > section:nth-of-type(2) {
+      animation-delay: 80ms;
+    }
+
+    main > section:nth-of-type(3) {
+      animation-delay: 160ms;
+    }
+
+    main > section:nth-of-type(4) {
+      animation-delay: 240ms;
+    }
+
+    main > section:nth-of-type(5) {
+      animation-delay: 320ms;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .item {
+      margin-top: 1.2rem;
+      padding-top: 1.2rem;
+      border-top: 1px dashed var(--line);
+    }
+
+    .item:first-of-type {
+      margin-top: 0.9rem;
+      padding-top: 0.9rem;
+      border-top: 0;
+    }
+
+    .item-head {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 0.8rem;
+      align-items: start;
+    }
+
+    .role {
+      margin: 0;
+      font-size: 1.03rem;
+      font-weight: 600;
+    }
+
+    .meta {
+      margin: 0.12rem 0 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .item-date {
+      color: var(--muted);
+      font-size: 0.85rem;
+      white-space: nowrap;
+      padding-top: 0.18rem;
+    }
+
+    ul {
+      margin: 0.85rem 0 0;
+      padding-left: 1.15rem;
+    }
+
+    li {
+      margin: 0.36rem 0;
+      color: color-mix(in srgb, var(--ink), #ffffff 12%);
+      font-size: 0.95rem;
+    }
+
+    .columns {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.1rem;
+    }
+
+    .stat {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 0.95rem;
+      background: color-mix(in srgb, #ffffff, var(--surface) 60%);
+    }
+
+    .stat strong {
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+
+    .stat p {
+      margin: 0;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    footer {
+      padding: 1rem 0 3.2rem;
+      color: var(--muted);
+      font-size: 0.83rem;
+      text-align: center;
+    }
+
+    @media (max-width: 780px) {
+      .topbar .wrap {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .item-head {
+        grid-template-columns: 1fr;
+      }
+
+      .item-date {
+        padding-top: 0;
+      }
+
+      .columns {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @keyframes slide-up {
+      from {
+        opacity: 0;
+        transform: translateY(16px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fade-in {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation: none !important;
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap">
+      <div class="brand">Chen Peng</div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#industry">Industry</a>
+        <a href="#leadership">Leadership</a>
+        <a href="#skills">Skills</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <section class="hero" aria-label="Intro">
+      <div class="hero-grid">
+        <div>
+          <h1>Chen Peng</h1>
+          <p class="subtitle">
+            Physics and Bioengineering student at the University of Pennsylvania working at the intersection of
+            neuroscience, machine learning, and applied mathematics.
+          </p>
+          <div class="contact-row">
+            <a class="chip" href="mailto:chenpc@sas.upenn.edu">chenpc@sas.upenn.edu</a>
+            <span class="chip">Philadelphia, PA</span>
+            <span class="chip">GPA 3.87 / 4.0</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <main>
+      <section id="about" aria-labelledby="about-title">
+        <h2 id="about-title">Education</h2>
+        <div class="item">
+          <div class="item-head">
+            <div>
+              <p class="role">University of Pennsylvania</p>
+              <p class="meta">B.A. in Physics, Minor in Math and Computational Neuroscience</p>
+              <p class="meta">Accelerated M.S.E. in Bioengineering</p>
+            </div>
+            <p class="item-date">Aug 2022 - May 2026</p>
+          </div>
+          <ul>
+            <li>Coursework includes Brain and Behavior, Neuroengineering, Theoretical Neuroscience, ML, and Learning in Robotics.</li>
+            <li>SAT: 1560 / 1600.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="research" aria-labelledby="research-title">
+        <h2 id="research-title">Research Experience</h2>
+
+        <article class="item">
+          <div class="item-head">
+            <div>
+              <p class="role">Researcher, GRASP Lab (Penn Engineering)</p>
+              <p class="meta">Philadelphia, PA</p>
+            </div>
+            <p class="item-date">Jan 2026</p>
+          </div>
+          <ul>
+            <li>Conducted research on disjunction in data features and its role in machine learning.</li>
+            <li>Worked under the advisement of Professor Pratik Chaudhari.</li>
+          </ul>
+        </article>
+
+        <article class="item">
+          <div class="item-head">
+            <div>
+              <p class="role">Research Assistant, Pesaran Lab (Penn Medicine & Penn Engineering)</p>
+              <p class="meta">Philadelphia, PA</p>
+            </div>
+            <p class="item-date">Jan 2025 - Present</p>
+          </div>
+          <ul>
+            <li>Led an individual project that discovered and validated ripple events in non-human primate cortex.</li>
+            <li>Built a detector for 100-140 Hz cortical ripple-like events and curated high-quality event sets.</li>
+            <li>Developed validation criteria around oscillatory morphology, referencing robustness, and spatial locality controls.</li>
+            <li>Used LFP preprocessing, spectral analysis (multitaper and wavelet), event cross-correlation, lead-lag analysis, and neural data visualization.</li>
+            <li>Presented a poster in Penn MindCORE summer programming and participated in weekly neuroscience seminars.</li>
+          </ul>
+        </article>
+      </section>
+
+      <section id="industry" aria-labelledby="industry-title">
+        <h2 id="industry-title">Industry Experience</h2>
+
+        <article class="item">
+          <div class="item-head">
+            <div>
+              <p class="role">U.S. Private Capital Summer Investment Analyst, BlackRock</p>
+              <p class="meta">New York, NY</p>
+            </div>
+            <p class="item-date">Jun 2024 - Aug 2024</p>
+          </div>
+          <ul>
+            <li>Supported 5+ direct lending transactions in the $50M-100M range across LBO, upsize, and dividend recap contexts.</li>
+            <li>Modeled downside and bankruptcy scenarios, stress-testing topline growth and margins to evaluate credit quality.</li>
+            <li>Authored company and industry overviews, coordinated expert calls, and led investment presentations.</li>
+          </ul>
+        </article>
+
+        <article class="item">
+          <div class="item-head">
+            <div>
+              <p class="role">Private Equity Summer Investment Analyst, CD Healthcare Infrastructure Partners</p>
+              <p class="meta">New York, NY</p>
+            </div>
+            <p class="item-date">May 2023 - Aug 2023</p>
+          </div>
+          <ul>
+            <li>Reviewed 40+ investment-grade outpatient medical office portfolios.</li>
+            <li>Built hospital sale-leaseback pitchbooks and assessed net asset value and rental potential across 10+ healthcare providers in Oklahoma.</li>
+          </ul>
+        </article>
+      </section>
+
+      <section id="leadership" aria-labelledby="leadership-title">
+        <h2 id="leadership-title">Leadership</h2>
+        <article class="item">
+          <div class="item-head">
+            <div>
+              <p class="role">Vice President of Education, Wharton Investment & Trading Group</p>
+              <p class="meta">Philadelphia, PA</p>
+            </div>
+            <p class="item-date">Sep 2022 - Nov 2024</p>
+          </div>
+          <ul>
+            <li>Led weekly sessions on accounting, DCF, M&A, LBO modeling, and macro-investing themes.</li>
+            <li>Built a 10-week Accelerator Education Program that reached 200+ attendees through the school year.</li>
+            <li>Hosted a stock pitch competition with 100+ undergraduate teams across the U.S. and globally.</li>
+          </ul>
+        </article>
+      </section>
+
+      <section id="skills" aria-labelledby="skills-title">
+        <h2 id="skills-title">Skills & Interests</h2>
+        <div class="columns" role="list">
+          <article class="stat" role="listitem">
+            <strong>Languages</strong>
+            <p>Mandarin (Native), OCaml, Python, PyTorch, MATLAB</p>
+          </article>
+          <article class="stat" role="listitem">
+            <strong>Focus</strong>
+            <p>Signal Processing, NeuroAI, Spatial Memory</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      Chen Peng &copy; 2026
+    </footer>
+  </div>
+</body>
+</html>
